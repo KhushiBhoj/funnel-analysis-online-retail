@@ -1,7 +1,7 @@
-# Funnel Analysis – Online Retail Dataset (Single-Year Study)
+# Funnel Analysis – Online Retail Dataset
 
 ## Overview
-This project presents a comprehensive funnel analysis conducted on an online retail transactional dataset covering **one year of customer activity**. The goal of the analysis was to identify key drop-off points in the customer lifecycle, understand how revenue is generated, and uncover actionable opportunities to improve conversion and retention.
+This project presents a comprehensive funnel analysis conducted on an online retail transactional dataset. The analysis began with a **single-year deep dive** to establish a clear baseline of customer behavior and was later extended to a **multi-year analysis** to validate trends, uncover structural bottlenecks, and evaluate how customer behavior evolved over time.
 
 Rather than relying on web-event data (e.g., page views or cart events), the analysis focuses on **transactional and behavioral funnels** that are appropriate for retail order data.
 
@@ -9,7 +9,9 @@ Rather than relying on web-event data (e.g., page views or cart events), the ana
 
 ## Dataset
 - Source: Online Retail Dataset (Kaggle)
-- Time Period: **Single year of transactions**
+- Time Period:
+  - **Phase 1:** Single year of transactions
+  - **Phase 2:** Multi-year transactional data
 - Granularity: Invoice-level transactional data
 - Key entities: Customers, Orders (Invoices), Items, Revenue
 
@@ -19,7 +21,8 @@ Rather than relying on web-event data (e.g., page views or cart events), the ana
 - Identify major customer drop-offs across the lifecycle
 - Understand how customers translate into orders, items, and revenue
 - Evaluate early-stage and long-term retention behavior
-- Provide business-focused recommendations to improve conversion
+- Validate whether funnel bottlenecks persist over time
+- Provide business-focused recommendations to improve conversion and retention
 
 ---
 
@@ -28,59 +31,75 @@ Rather than relying on web-event data (e.g., page views or cart events), the ana
 ### 1. Repeat Purchase Funnel  
 **All Customers → Repeat Customers**
 
-This funnel evaluates how effectively first-time buyers are converted into repeat customers, highlighting early churn and retention opportunities.
+This funnel evaluates how effectively first-time buyers are converted into repeat customers.
 
 **Key Insight:**  
-While a strong majority of customers return for repeat purchases, a meaningful portion churns after their first transaction, making early engagement critical.
+While a strong majority of customers return for repeat purchases in the single-year view, the multi-year analysis confirms that **first-to-second purchase drop-off is a consistent and structural bottleneck** across years.
 
 ---
 
 ### 2. Order-Level Value Funnel  
 **Customers → Orders → Items Sold → Total Revenue**
 
-This funnel focuses on value flow rather than behavior, showing how customer volume translates into business outcomes.
+This funnel focuses on value flow rather than behavior.
 
 **Key Insight:**  
-Revenue growth is driven more by repeat purchasing and basket expansion than by customer acquisition alone.
+Multi-year trends show that revenue growth is driven more by **repeat purchasing and basket expansion** than by customer acquisition alone, with revenue heavily front-loaded early in the customer lifecycle.
 
 ---
 
 ### 3. Cohort Retention Funnel  
 **Month 0 → Month 1 → Month 2 → …**
 
-A cohort-based retention funnel was built using month offsets from each customer’s first purchase to track repeat behavior over time.
+A cohort-based retention funnel was built using month offsets from each customer’s first purchase.
 
 **Key Insight:**  
-The largest drop-off occurs immediately after the first purchase. Customers who return beyond the first month tend to exhibit stable, long-term engagement.
+The largest drop-off consistently occurs immediately after the first purchase. Multi-year cohort analysis shows that customers who return beyond the first 1–2 months tend to demonstrate **stable long-term engagement**, while newer cohorts exhibit slightly faster early churn.
 
 ---
 
-## Key Findings (Summary)
-- Early-stage churn is the primary bottleneck across funnels
+## Key Findings (Consolidated)
+
+### Single-Year Insights
+- Early-stage churn is the primary bottleneck
 - Retention within the first month is the strongest predictor of long-term value
 - Existing customers contribute disproportionately to revenue
-- Improving early retention can significantly increase customer lifetime value
+
+### Multi-Year Insights
+- Funnel shape remains structurally consistent year-over-year
+- First-to-second purchase conversion is the weakest stage across all years
+- Revenue is concentrated in the first 2–3 months of the customer lifecycle
+- Later cohorts show marginally faster retention decay, indicating weakening long-term loyalty
+
+---
+
+## Business Interpretation
+- Customer acquisition strategies are effective
+- Retention and repeat purchase strategies are underdeveloped
+- Growth is driven more by new customers than by sustained lifetime value
+- Improving early retention represents the highest-impact growth lever
 
 ---
 
 ## Business Recommendations
-- Introduce post-purchase nudges and reminders shortly after first purchase
+- Introduce post-purchase nudges within 7–14 days of first purchase
 - Offer targeted repeat-purchase incentives (discounts, loyalty points, free shipping)
-- Use cross-sell and bundling strategies to increase basket size
+- Implement personalized product recommendations and bundling strategies
 - Focus retention efforts on the first month, where churn is highest
+- Run re-engagement campaigns for customers inactive in Months 2–3
 
 ---
 
 ## Tools & Techniques
 - Python (Pandas, NumPy)
-- Cohort analysis and retention modeling
 - Funnel construction using sequential business logic
+- Cohort analysis and retention modeling
+- Multi-year trend validation
 - Business-focused interpretation of analytical results
 
 ---
 
-## What’s Next 🚀
-This analysis was conducted on **a single year of data** to establish a clean and interpretable baseline.  
-A **multi-year funnel and cohort analysis** is planned next to examine trends over time, cohort evolution, and long-term changes in customer behavior.
+## Conclusion
+This analysis demonstrates that funnel performance in the online retail dataset is **structurally constrained by early-stage churn**, rather than by customer acquisition. The consistency of funnel drop-offs across multiple years confirms that retention challenges are systemic and not driven by short-term fluctuations.
 
-*More coming soon 👀*
+By focusing on first-to-second purchase conversion and early lifecycle engagement, the business can materially improve customer lifetime value and long-term revenue without increasing acquisition spend.
