@@ -1,4 +1,4 @@
-# Funnel Analysis Report – Online Retail Dataset
+# Funnel Analysis – Online Retail Dataset (Single Year Analysis Report)
 
 ## Objective
 The objective of this analysis was to identify customer drop-offs, understand how value is generated across the business, and highlight opportunities to improve conversion and retention. Three complementary funnels were analyzed to capture different dimensions of customer behavior.
